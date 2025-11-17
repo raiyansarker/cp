@@ -1,75 +1,34 @@
+// ██████████████████╗█████╗███╗   ██╗    ██████╗ █████╗████╗   ██╗█████╗███╗   ██╗
+// ╚══██╔══██╚══██╔══██╔══██████╗  ██║    ██╔══████╔══████╚██╗ ██╔██╔══██████╗  ██║
+//    ██║  ██║  ██║  █████████╔██╗ ██║    ██████╔█████████║╚████╔╝█████████╔██╗ ██║
+//    ██║  ██║  ██║  ██╔══████║╚██╗██║    ██╔══████╔══████║ ╚██╔╝ ██╔══████║╚██╗██║
+//    ██║  ██║  ██║  ██║  ████║ ╚████║    ██║  ████║  ████║  ██║  ██║  ████║ ╚████║
+//    ╚═╝  ╚═╝  ╚═╝  ╚═╝  ╚═╚═╝  ╚═══╝    ╚═╝  ╚═╚═╝  ╚═╚═╝  ╚═╝  ╚═╝  ╚═╚═╝  ╚═══╝
+// GitHub: https://github.com/raiyansarker/cp
+
 #include <bits/stdc++.h>
 using namespace std;
-
-// =================== YOUR DEBUG TEMPLATE BEGINS HERE ===================
+typedef long long ll;typedef unsigned long long ull;typedef long double ld;typedef pair<int,int> pii;typedef pair<ll,ll> pll;typedef vector<int> vi;typedef vector<ll> vll;typedef vector<pii> vpii;typedef vector<pll> vpll;
+#define all(x) (x).begin(),(x).end()
+#define rall(x) (x).rbegin(),(x).rend()
+#define pb push_back
+#define mp make_pair
+#define fi first
+#define se second
+#define sz(x) (int)(x).size()
 
 #ifndef NDEBUG
-
-#include <chrono>
-
-// --- Helper functions to pretty-print common data structures ---
-template<typename T1, typename T2>
-std::ostream& operator<<(std::ostream& os, const std::pair<T1, T2>& p) {
-  return os << "(" << p.first << ", " << p.second << ")";
-}
-
-template<typename T_container, typename T = typename std::enable_if<!std::is_same<T_container, std::string>::value, typename T_container::value_type>::type>
-std::ostream& operator<<(std::ostream& os, const T_container& v) {
-  os << "{";
-  std::string sep;
-  for (const T& x : v) {
-      os << sep << x;
-      sep = ", ";
-  }
-  return os << "}";
-}
-
-// --- The core debug macro ---
-#define debug(...) std::cerr << "[Line " << __LINE__ << "]: " << #__VA_ARGS__ << " = ", _print(__VA_ARGS__)
-
-// --- Variadic template function to print all arguments ---
-void _print() {
-    std::cerr << std::endl;
-}
-
-template<typename T, typename... V>
-void _print(T t, V... v) {
-  std::cerr << t;
-  if (sizeof...(v)) {
-      std::cerr << ", ";
-  }
-  _print(v...);
-}
-
-// --- Optional: A timer utility ---
-class Timer {
-  std::chrono::time_point<std::chrono::high_resolution_clock> start_time;
-public:
-  Timer() {
-    start_time = std::chrono::high_resolution_clock::now();
-  }
-  ~Timer() {
-    auto end_time = std::chrono::high_resolution_clock::now();
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end_time - start_time);
-    std::cerr << "[Timer]: " << duration.count() << " ms" << std::endl;
-  }
-};
-
-#define time_block Timer timer_in_scope_
-
+namespace dbg{string s(int x){return to_string(x);}string s(long long x){return to_string(x);}string s(unsigned long long x){return to_string(x);}string s(double x){return to_string(x);}string s(long double x){return to_string(x);}string s(char x){return "'"+string(1,x)+"'";}string s(string x){return '"'+x+'"';}string s(bool x){return x?"true":"false";}string s(const char*x){return'"'+string(x)+'"';}template<class A,class B>string s(pair<A,B>p){return"("+s(p.first)+","+s(p.second)+")";}template<class T>string s(T v){string r="{";for(auto x:v)r+=(r=="{"?"":","),r+=s(x);return r+"}";}template<class T>string s(stack<T>st){string r="{";while(!st.empty())r+=(r=="{"?"":","),r+=s(st.top()),st.pop();return r+"}";}template<class T>string s(queue<T>q){string r="{";while(!q.empty())r+=(r=="{"?"":","),r+=s(q.front()),q.pop();return r+"}";}template<class T>string s(priority_queue<T>pq){string r="{";while(!pq.empty())r+=(r=="{"?"":","),r+=s(pq.top()),pq.pop();return r+"}";}void p(const char*n){cerr<<"\n";}template<class T>void p(const char*n,T v){cerr<<n<<"="<<s(v)<<"\n";}template<class T,class...A>void p(const char*n,T v,A...a){for(;*n!=',';n++)cerr<<*n;cerr<<"="<<s(v)<<", ";p(n+1,a...);}}
+#define debug(...) cerr<<"[L"<<__LINE__<<"]: ",dbg::p(#__VA_ARGS__,__VA_ARGS__)
 #else
 #define debug(...)
-#define time_block
-
 #endif
-
-// =================== YOUR DEBUG TEMPLATE ENDS HERE ===================
 
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
+    
 
-
-
+    
   return 0;
 }
