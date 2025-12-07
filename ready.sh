@@ -2,13 +2,13 @@
 
 # Check arguments
 if [ $# -lt 2 ]; then
-  echo "Usage: $0 <number_of_problems> <folder_name>"
+  echo "Usage: $0 <number_of_problems> <folder_name> [template_file]"
   exit 1
 fi
 
 num=$1
 folder=$2
-template_file="template.cpp"
+template_file="${3:-template.cpp}"
 
 # Validate number of problems
 if ! [[ "$num" =~ ^[0-9]+$ ]]; then

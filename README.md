@@ -12,15 +12,16 @@ Minimal setup to spin up multiple C++ problem files from a single template and c
 - `g++` with C++17 (e.g., `g++ (>=7)`)
 
 ### Generate problem files
-Creates N files named `a.cpp`, `b.cpp`, ... in a new/existing folder, each based on `template.cpp`. The placeholder `{{PROBLEM}}` in the template (if present) is replaced with the letter.
+Creates N files named `a.cpp`, `b.cpp`, ... in a new/existing folder, each based on `template.cpp` (or a custom template). The placeholder `{{PROBLEM}}` in the template (if present) is replaced with the letter.
 
 ```bash
 # Usage
-./ready.sh <number_of_problems> <folder_name>
+./ready.sh <number_of_problems> <folder_name> [template_file]
 
 # Examples
 ./ready.sh 5 2025-10-20-codeforces
 ./ready.sh 8 round-900
+./ready.sh 6 abc-contest-123 /path/to/custom_template.cpp
 ```
 
 Notes:
@@ -66,7 +67,7 @@ g++ -std=gnu++17 -O2 -Wall a.cpp -o a
 - Use the `{{PROBLEM}}` placeholder anywhere in the template to inject the problem letter in generated files.
 
 ### Troubleshooting
-- "Template file 'template.cpp' not found": ensure you run the script from the directory that contains `template.cpp` (or adjust paths).
+- "Template file 'template.cpp' not found": ensure you run the script from the directory that contains `template.cpp` (or provide a custom template path as the third argument).
 - "Maximum supported problems is 26": the generator creates letters `a`–`z` only.
 - If `g++` is missing, install Xcode Command Line Tools on macOS or your distro's build tools on Linux.
 
