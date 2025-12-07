@@ -27,8 +27,8 @@ namespace dbg{string s(int x){return to_string(x);}string s(long long x){return 
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
-    
 
-    
+
+
   return 0;
 }
